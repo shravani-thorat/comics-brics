@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comics &amp; Brics Cafe | Comics, Board Games, Lego Room and Food</title>
+<meta name="description" content="Comics &amp; Brics is a cafe hub with thousands of comics, hundreds of board games, a dedicated Lego room and a themed food menu. Book your table.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top" id="top">
+  <a class="logo" href="#home" data-link aria-label="Comics and Brics home"><span>Comics</span><em>&amp;</em><span>Brics</span></a>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><i></i><i></i><i></i></button>
+  <nav class="nav" id="nav" aria-label="Main">
+    <a href="#home" data-link data-nav="home">Home</a>
+    <a href="#comics" data-link data-nav="comics">Comics</a>
+    <a href="#play" data-link data-nav="play">Games &amp; Lego</a>
+    <a href="#menu" data-link data-nav="menu">Menu</a>
+    <a href="#book" data-link data-nav="book" class="nav-book">Book now</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ============ HOME ============ -->
+<section class="page" id="page-home" data-page="home">
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-in">
+      <div class="hero-copy">
+        <p class="sticker">Cafe + comics + games + Lego</p>
+        <h1><span>Read it.</span><span>Play it.</span><span>Build it.</span></h1>
+        <p class="lead">Thousands of comics, hundreds of board games and a whole room of Lego, with a menu that tastes as good as the covers look.</p>
+        <div class="btns">
+          <button class="btn btn-red" data-go="book">Book a table</button>
+          <button class="btn btn-white" data-go="comics">Browse comics</button>
+        </div>
+      </div>
+      <button class="bubble" id="bubble" aria-live="polite"><span id="bubbleText">Psst! Tap this bubble.</span></button>
+    </div>
+  </div>
+
+  <section class="strip">
+    <div><b data-count="1000">0</b><span>comics to read</span></div>
+    <div><b data-count="300">0</b><span>board games</span></div>
+    <div><b data-count="1">0</b><span>dedicated Lego room</span></div>
+    <div><b data-count="4">0</b><span>social events a week</span></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2">Choose your mission</h2>
+    <div class="missions">
+      <button class="mission m1" data-go="comics">
+        <img src="comics.jpg" alt="Pile of colourful comic books" loading="lazy">
+        <span class="m-tag">Mission 1</span>
+        <strong>Comics wall</strong>
+        <span>Superheroes, manga, indie and graphic novels. Read in a cosy corner.</span>
+      </button>
+      <button class="mission m2" data-go="play">
+        <img src="board-game-2.jpg" alt="Large board game set up on a cafe table" loading="lazy">
+        <span class="m-tag">Mission 2</span>
+        <strong>Table games</strong>
+        <span>From quick card games to epic all-evening campaigns.</span>
+      </button>
+      <button class="mission m3" data-go="play" data-tab="lego">
+        <span class="studs" aria-hidden="true"></span>
+        <span class="m-tag">Mission 3</span>
+        <strong>The Lego room</strong>
+        <span>A room just for building. Bring a friend, a kid or your inner kid.</span>
+      </button>
+    </div>
+  </section>
+
+  <section class="sec quiz-sec" id="quizSec">
+    <div class="quiz-wrap">
+      <div class="quiz-head">
+        <h2 class="h2">Which reader are you?</h2>
+        <p>Four quick questions. We'll suggest a comic type, a game and something to eat.</p>
+      </div>
+      <div class="quiz" id="quiz">
+        <div class="q-bar"><span id="qBar"></span></div>
+        <div id="qBody"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2 class="h2">The community calendar</h2>
+    <div class="events">
+      <article class="ev"><b>Saturday</b><h3>Comic swap</h3><p>Bring one, take one. Meet other collectors and talk about your favourite runs.</p></article>
+      <article class="ev"><b>Wednesday</b><h3>Draw night</h3><p>Paper, pens and a theme. No talent needed, only a willingness to doodle.</p></article>
+      <article class="ev"><b>Sunday</b><h3>Lego build-off</h3><p>One theme, one hour, one bucket of bricks. The room votes on the winner.</p></article>
+      <article class="ev"><b>Friday</b><h3>Game league</h3><p>Friendly weekly tournaments on a rotating board game. Teams welcome.</p></article>
+    </div>
+    <p class="fine">Sample schedule for preview. Days and timings are confirmed by the cafe.</p>
+  </section>
+
+  <section class="cta">
+    <h2>Your next issue starts here.</h2>
+    <button class="btn btn-red" data-go="book">Plan your visit</button>
+  </section>
+</section>
+
+<!-- ============ COMICS ============ -->
+<section class="page" id="page-comics" data-page="comics">
+  <div class="head head-comics">
+    <h1>The comics wall</h1>
+    <p>A small slice of our shelves. Build a pull list and we'll have your picks waiting at your table.</p>
+  </div>
+  <div class="comics-wrap">
+    <div>
+      <div class="tools">
+        <label class="search"><span class="sr">Search comics</span><input type="search" id="cSearch" placeholder="Search by title"></label>
+        <div class="chips" id="cChips" role="group" aria-label="Genre"></div>
+      </div>
+      <p class="count" id="cCount" aria-live="polite"></p>
+      <div class="covers" id="covers"></div>
+      <div class="none" id="cNone" hidden><p>No comics match that. Try another word or genre.</p><button class="btn btn-white sm" id="cReset">Show everything</button></div>
+    </div>
+    <aside class="pull" id="pull" aria-label="Your pull list">
+      <h2>Pull list</h2>
+      <ul id="pullList"></ul>
+      <p class="pull-empty" id="pullEmpty">Tap Add on any comic to save it here.</p>
+      <button class="btn btn-red wide" id="pullBook">Reserve a table with these</button>
+      <button class="btn btn-white wide sm" id="pullClear">Clear list</button>
+    </aside>
+  </div>
+  <p class="fine pad">Sample titles shown for preview. The real collection is confirmed by the cafe.</p>
+</section>
+
+<!-- ============ PLAY ============ -->
+<section class="page" id="page-play" data-page="play">
+  <div class="head head-play">
+    <h1>Games &amp; Lego</h1>
+    <p>Two ways to play with your hands: tabletop games on the floor, bricks in the room upstairs.</p>
+  </div>
+  <div class="play-tabs" role="tablist" aria-label="Play type">
+    <button role="tab" class="ptab on" data-ptab="games" aria-selected="true">Board games</button>
+    <button role="tab" class="ptab" data-ptab="lego" aria-selected="false">Lego room</button>
+  </div>
+
+  <section class="sec ppanel" id="panel-games">
+    <div class="games-top">
+      <div class="finder">
+        <h2 class="h2s">Game finder</h2>
+        <label class="rng">How many players: <b id="plOut">4</b>
+          <input type="range" id="plRange" min="1" max="10" value="4" aria-label="Number of players">
+        </label>
+        <label class="rng">Time you have: <b id="tmOut">Any</b>
+          <input type="range" id="tmRange" min="15" max="180" step="15" value="180" aria-label="Maximum play time in minutes">
+        </label>
+        <button class="btn btn-white sm" id="gReset">Reset</button>
+      </div>
+      <div class="gphotos">
+        <img src="board-game-2.jpg" alt="Big strategy board game in progress" loading="lazy">
+        <img src="board-game-1.jpg" alt="Colourful dice game with stained glass boards" loading="lazy">
+      </div>
+    </div>
+    <p class="count" id="gCount" aria-live="polite"></p>
+    <div class="glist" id="glist"></div>
+    <p class="fine">Sample games for preview.</p>
+  </section>
+
+  <section class="sec ppanel" id="panel-lego" hidden>
+    <div class="lego-intro">
+      <h2 class="h2s">The Lego room</h2>
+      <p>A dedicated room with walls of bricks sorted by colour, build tables and display shelves for finished models. Pick a session and we'll save you a spot.</p>
+    </div>
+    <div class="sessions" id="sessions"></div>
+    <p class="fine">Sample sessions for preview. Session lengths and spots are confirmed by the cafe.</p>
+  </section>
+</section>
+
+<!-- ============ MENU ============ -->
+<section class="page" id="page-menu" data-page="menu">
+  <div class="head head-menu">
+    <h1>The menu</h1>
+    <p>Every dish has a story title. The food underneath is simple, generous and easy to eat with a comic in one hand.</p>
+  </div>
+  <div class="menu-tools">
+    <div class="chips" id="mTabs" role="tablist" aria-label="Menu sections"></div>
+    <div class="menu-right">
+      <label class="sw"><input type="checkbox" id="vegOnly"><span>Veg only</span></label>
+      <label class="sel">Sort
+        <select id="sortBy"><option value="menu">Menu order</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select>
+      </label>
+    </div>
+  </div>
+  <div class="mgrid" id="mgrid"></div>
+  <p class="fine pad">Sample menu and prices shown for preview. Final menu is confirmed by the cafe.</p>
+</section>
+
+<!-- ============ BOOK ============ -->
+<section class="page" id="page-book" data-page="book">
+  <div class="head head-book">
+    <h1>Book your visit</h1>
+    <p>Three quick steps. We hold your table for 15 minutes past your time.</p>
+  </div>
+  <div class="book-grid">
+    <form class="wiz" id="wiz" novalidate>
+      <ol class="steps" id="steps" aria-label="Progress">
+        <li class="on">The plan</li><li>The time</li><li>The hero</li>
+      </ol>
+
+      <div class="step" data-step="0">
+        <h2>What's the plan?</h2>
+        <p class="hint">Pick everything you want to do. You can choose more than one.</p>
+        <div class="plans" id="plans" role="group" aria-label="Plans">
+          <button type="button" class="plan" data-plan="Read comics" aria-pressed="false"><strong>Read comics</strong><span>Comics wall</span></button>
+          <button type="button" class="plan" data-plan="Play board games" aria-pressed="false"><strong>Play board games</strong><span>Tabletop</span></button>
+          <button type="button" class="plan" data-plan="Build in the Lego room" aria-pressed="false"><strong>Build with Lego</strong><span>Lego room</span></button>
+          <button type="button" class="plan" data-plan="Eat and drink" aria-pressed="false"><strong>Eat and drink</strong><span>Themed menu</span></button>
+        </div>
+        <small class="er" id="ePlan"></small>
+      </div>
+
+      <div class="step" data-step="1" hidden>
+        <h2>When are you coming?</h2>
+        <div class="two">
+          <div class="f"><label for="bDate">Date</label><input type="date" id="bDate"><small class="er" id="eDate"></small></div>
+          <div class="f"><label for="bTime">Time</label><select id="bTime"></select><small class="er" id="eTime"></small></div>
+        </div>
+        <div class="f"><span class="lbl">Guests</span>
+          <div class="stepper"><button type="button" id="gm" aria-label="Fewer guests">&minus;</button><output id="gc">4</output><button type="button" id="gp" aria-label="More guests">+</button></div>
+        </div>
+      </div>
+
+      <div class="step" data-step="2" hidden>
+        <h2>Who's the hero?</h2>
+        <div class="two">
+          <div class="f"><label for="bName">Name</label><input type="text" id="bName" autocomplete="name"><small class="er" id="eName"></small></div>
+          <div class="f"><label for="bPhone">Mobile number</label><input type="tel" id="bPhone" inputmode="numeric" placeholder="10 digits" autocomplete="tel"><small class="er" id="ePhone"></small></div>
+        </div>
+        <div class="f"><label for="bNote">Notes (optional)</label><textarea id="bNote" rows="3" placeholder="Birthday, kids coming, comics you want waiting"></textarea></div>
+      </div>
+
+      <div class="wiz-btns">
+        <button type="button" class="btn btn-white" id="wBack" hidden>Back</button>
+        <button type="submit" class="btn btn-red" id="wNext">Next</button>
+      </div>
+    </form>
+
+    <aside class="where">
+      <h2>Find the hub</h2>
+      <p class="addr">Comics &amp; Brics Cafe<br>12 Sample Street<br>Your City 000000</p>
+      <p><strong>Open</strong><br>Daily, 11 am to 11 pm</p>
+      <p><strong>Call</strong><br><a href="tel:+919876543210">+91 98765 43210</a></p>
+      <p class="fine">Address, phone and hours are sample details for preview.</p>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div><p class="foot-logo">Comics &amp; Brics</p><p>Comics, board games, a Lego room and good food. One happy community hub.</p></div>
+    <div class="foot-links">
+      <a href="#home" data-link>Home</a><a href="#comics" data-link>Comics</a><a href="#play" data-link>Games &amp; Lego</a><a href="#menu" data-link>Menu</a><a href="#book" data-link>Book now</a>
+    </div>
+  </div>
+  <p class="copy">&copy; 2026 Comics &amp; Brics. Website preview.</p>
+</footer>
+
+<div class="overlay" id="overlay" hidden>
+  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+    <button type="button" class="dx" id="dClose" aria-label="Close">&times;</button>
+    <div id="dBody"></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
